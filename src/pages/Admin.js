@@ -41,7 +41,7 @@ const Admin = () => {
     };
     try {
       await axios.post(url, formData, config);
-      const response = await axios.post("http://localhost:3005/api/product", {
+      const response = await axios.post("https://reemkhalid2-app-40072ad251d5.herokuapp.com/api/product", {
         ProductName,
         ProductPrice,
         ProductDescription,
@@ -62,7 +62,7 @@ const Admin = () => {
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:3005/api/product")
+      .get("https://reemkhalid2-app-40072ad251d5.herokuapp.com/api/product")
       .then((response) => {
         setProducts(response.data);
       })
@@ -95,7 +95,7 @@ const Admin = () => {
 
   const getProductEdit = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:3005/api/product/${id}`);
+      const response = await axios.get(`https://reemkhalid2-app-40072ad251d5.herokuapp.com/api/product/${id}`);
       const product = response.data[0];
       setProductName(product.ProductName);
       setProductPrice(product.ProductPrice);
@@ -110,7 +110,7 @@ const Admin = () => {
 
   const ModifyProduct = async (id) => {
     try {
-      await axios.put(`http://localhost:3005/api/product/${id}`, {
+      await axios.put(`https://reemkhalid2-app-40072ad251d5.herokuapp.com/api/product/${id}`, {
         ProductName,
         ProductPrice,
         ProductDescription,
@@ -135,7 +135,7 @@ const Admin = () => {
     }).then(async (willDelete) => {
       if (willDelete) {
         try {
-          await axios.delete(`http://localhost:3005/api/product/${id}`);
+          await axios.delete(`https://reemkhalid2-app-40072ad251d5.herokuapp.com/api/product/${id}`);
           fetchProducts();
         } catch (error) {
           console.error("There was an error deleting the product!", error);

@@ -10,7 +10,7 @@ function ProductList() {
 
   const fetchProduct = () => {
     axios
-      .get("http://localhost:3005/api/product")
+      .get("https://reemkhalid2-app-40072ad251d5.herokuapp.com/api/product")
       .then((response) => {
         setProduct(response.data);
       })
@@ -24,7 +24,7 @@ function ProductList() {
       fetchProduct();
     } else {
       axios
-        .get(`http://localhost:3005/api/product/category/${CategoryID}`)
+        .get(`https://reemkhalid2-app-40072ad251d5.herokuapp.com/api/product/category/${CategoryID}`)
         .then((response) => {
           setProduct(response.data);
         })

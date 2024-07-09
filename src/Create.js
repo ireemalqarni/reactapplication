@@ -21,7 +21,7 @@ function Create({ onCreatedUser }) {
 
   const createUser = async () => {
     try {
-      const response = await axios.post("http://localhost:3004/api/users", {
+      const response = await axios.post("https://reemkhalid-app-1ff87c91f50d.herokuapp.com", {
         name,
         email,
         password,
