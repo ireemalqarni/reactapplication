@@ -30,7 +30,7 @@ const Admin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = 'http://localhost:3006/uploadFile';
+    const url = `https://reemkhalid-react-671eff0d960d.herokuapp.com/uploadFile`;
     const formData = new FormData();
     formData.append('file', file);
     formData.append('fileName', file.name);
