@@ -36,6 +36,7 @@ function Create({ onCreatedUser }) {
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault()
     const form = event.currentTarget;
     if (form.checkValidity() === false || isValid) {
       event.preventDefault();
