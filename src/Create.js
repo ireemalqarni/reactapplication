@@ -24,7 +24,7 @@ function Create({ onCreatedUser }) {
       const response = await axios.post("https://reemkhalid-app-1ff87c91f50d.herokuapp.com/api/users", {
         name,
         email,
-        password,
+        password
       });
       
       onCreatedUser(); // Trigger any event on user creation

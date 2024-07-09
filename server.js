@@ -34,5 +34,5 @@ app.post('/uploadFile', upload.single('file'), (req, res) => {
 });
 
 app.listen(PORT, () =>{
-  console.log(`Server is running on port https://reemkhalid-react-671eff0d960d.herokuapp.com/${PORT}`)
+  console.log(`Server is running on port ${PORT}`)
 });
