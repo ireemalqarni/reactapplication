@@ -24,7 +24,7 @@ function LoginPage() {
 
     try {
       const response = await axios.post(
-        `https://reemapp-dcca9dc801ff.herokuapp.com/api/users/${email}/${password}`,
+        `https://reemapp-dcca9dc801ff.herokuapp.com/api/users`,
         {
           email: email,
           password: password,
