@@ -41,7 +41,7 @@ function LoginPage() {
       }
     } catch (error) {
       setErrorMessage("Error: " + error.message);
-      console.error("There was an error with the login request:", error);
+      setValidated(false);
     }
   };
 
