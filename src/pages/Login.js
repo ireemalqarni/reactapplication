@@ -34,10 +34,11 @@ function LoginPage() {
       if (response.data) {
         setEmail("");
         setPassword("");
-        setValidated(false);
+        //setValidated(false);
         navigate("/products");
       } else {
         setErrorMessage("Invalid email or password");
+        setValidated(false);
       }
     } catch (error) {
       setErrorMessage("Error: " + error.message);
