@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Container, Button, Form, Modal } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function Create({ onCreatedUser }) {
   const [show, setShow] = useState(false);
@@ -11,6 +12,7 @@ function Create({ onCreatedUser }) {
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [isValid, setIsValid] = useState(false);
+  const navigate = useNavigate();
 
   const handleClose = () => {
     setShow(false);
@@ -30,13 +32,14 @@ function Create({ onCreatedUser }) {
       onCreatedUser(); // Trigger any event on user creation
       setConfirm(""); // Reset confirmation field
       setValidated(false); // Reset form validation state
+      setShow(false);
+      navigate('/Login')
     } catch (error) {
       alert("Error: " + error);
     }
   };
 
   const handleSubmit = (event) => {
-   // event.preventDefault()
     const form = event.currentTarget;
     if (form.checkValidity() === false || isValid) {
       event.preventDefault();
@@ -44,6 +47,8 @@ function Create({ onCreatedUser }) {
     
     } else {
       createUser();
+      event.preventDefault();
+      event.stopPropagation();
       handleClose();
     }
     setValidated(true);
