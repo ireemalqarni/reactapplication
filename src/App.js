@@ -11,14 +11,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
- 
+
+ const handleCreateUser =() =>{
+
+ };
+
   return (
     <div className="container">
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="registration" element={<Registration />} />
+            <Route path="registration" element={<Registration onCreatedUser={handleCreateUser} />} />
             <Route path="Login" element={<Login />} />
             <Route path="products" element={<Products />} />
             <Route path="admin" element={<Admin />} />
