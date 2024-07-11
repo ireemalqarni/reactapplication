@@ -23,6 +23,7 @@ function Create({ onCreatedUser }) {
         email,
         password
       });
+      alert('register successfully!!!!!!!');
 
       onCreatedUser(); // Trigger any event on user creation
       navigate('/Login'); // Navigate to login page
