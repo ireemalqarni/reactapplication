@@ -14,11 +14,6 @@ function Create({ onCreatedUser }) {
   const [isValid, setIsValid] = useState(false);
   const navigate = useNavigate();
 
-  // const handleClose = () => {
-  //   setShow(false);
-  //   setValidated(false);
-  // };
-
   const handleShow = () => setShow(true);
 
   const createUser = async () => {
@@ -28,34 +23,27 @@ function Create({ onCreatedUser }) {
         email,
         password
       });
-      
+
       onCreatedUser(); // Trigger any event on user creation
-      setConfirm(""); // Reset confirmation field
-      setValidated(false); // Reset form validation state
-      setShow(false);
-      navigate('/Login')
+      navigate('/login'); // Navigate to login page
     } catch (error) {
       alert("Error: " + error);
     }
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false || isValid) {
-      event.preventDefault();
       event.stopPropagation();
-    
     } else {
       createUser();
-      event.preventDefault();
-      event.stopPropagation();
-      handleClose();
     }
     setValidated(true);
   };
 
-  const handleClose=() =>{
-    setShow(false)
+  const handleClose = () => {
+    setShow(false);
     setValidated(false);
   };
 
