@@ -12,6 +12,8 @@ function LoginPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
+  const adminLogin = 'admin@gmail.com';
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -34,8 +36,13 @@ function LoginPage() {
       if (response.data) {
         setEmail("");
         setPassword("");
+
         //setValidated(false);
-        navigate("/products");
+        if (email === adminLogin){
+          navigate('/Admin');
+        }else{
+          navigate("/products");
+        }
       } else {
         setErrorMessage("Invalid email or password");
         setValidated(false);

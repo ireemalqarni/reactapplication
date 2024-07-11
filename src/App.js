@@ -12,10 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
- //const handleCreateUser =() =>{
-
- //};
-
   return (
     <div className="container">
       <Router>
@@ -25,7 +21,7 @@ function App() {
             <Route path="registration" element={<Registration />} />
             <Route path="Login" element={<Login />} />
             <Route path="products" element={<Products />} />
-            <Route path="admin" element={<Admin />} />
+            <Route path="Admin" element={<Admin />} />
           </Route>
         </Routes>
       </Router>

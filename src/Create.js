@@ -24,8 +24,6 @@ function Create() {
         password
       });
       alert('register successfully!!!!!!!');
-
-      //onCreatedUser(); // Trigger any event on user creation
       navigate('/Login'); // Navigate to login page
     } catch (error) {
       alert("Error: " + error);
