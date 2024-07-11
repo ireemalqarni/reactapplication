@@ -14,10 +14,10 @@ function Create({ onCreatedUser }) {
   const [isValid, setIsValid] = useState(false);
   const navigate = useNavigate();
 
-  const handleClose = () => {
-    setShow(false);
-    setValidated(false);
-  };
+  // const handleClose = () => {
+  //   setShow(false);
+  //   setValidated(false);
+  // };
 
   const handleShow = () => setShow(true);
 
@@ -52,6 +52,11 @@ function Create({ onCreatedUser }) {
       handleClose();
     }
     setValidated(true);
+  };
+
+  const handleClose=() =>{
+    setShow(false)
+    setValidated(false);
   };
 
   const checkMatch = () => {
