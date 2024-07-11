@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, Button, Form, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
@@ -19,9 +19,9 @@ function Create({ onCreatedUser }) {
   const createUser = async () => {
     try {
       const response = await axios.post("https://reemapp-dcca9dc801ff.herokuapp.com/api/users", {
-        name: name,
-        email:email,
-        password: password
+        name,
+        email,
+        password
       });
 
       onCreatedUser(); // Trigger any event on user creation
@@ -54,6 +54,10 @@ function Create({ onCreatedUser }) {
       setIsValid(false); // Hide validation state
     }
   };
+
+  useEffect(() => {
+
+  }, []);
 
   return (
     <Container className="d-flex justify-content-center align-items-start min-vh-100" style={{ maxWidth: "600px", marginTop: "2%" }}>
