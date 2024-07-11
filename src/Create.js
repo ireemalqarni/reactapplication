@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Container, Button, Form, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-function Create({ onCreatedUser }) {
+function Create() {
   const [show, setShow] = useState(false);
   const [validated, setValidated] = useState(false);
 
@@ -25,7 +25,7 @@ function Create({ onCreatedUser }) {
       });
       alert('register successfully!!!!!!!');
 
-      onCreatedUser(); // Trigger any event on user creation
+      //onCreatedUser(); // Trigger any event on user creation
       navigate('/Login'); // Navigate to login page
     } catch (error) {
       alert("Error: " + error);

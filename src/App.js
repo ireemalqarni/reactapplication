@@ -12,9 +12,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
- const handleCreateUser =() =>{
+ //const handleCreateUser =() =>{
 
- };
+ //};
 
   return (
     <div className="container">
@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="registration" element={<Registration onCreatedUser={handleCreateUser} />} />
+            <Route path="registration" element={<Registration />} />
             <Route path="Login" element={<Login />} />
             <Route path="products" element={<Products />} />
             <Route path="admin" element={<Admin />} />
