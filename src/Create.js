@@ -25,7 +25,7 @@ function Create({ onCreatedUser }) {
       });
 
       onCreatedUser(); // Trigger any event on user creation
-      navigate('/login'); // Navigate to login page
+      navigate('/Login'); // Navigate to login page
     } catch (error) {
       alert("Error: " + error);
     }
